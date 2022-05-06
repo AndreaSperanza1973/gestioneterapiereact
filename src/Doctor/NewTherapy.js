@@ -469,7 +469,7 @@ export class NewTherapy extends Component {
                                             </Form.Group>}
                                         {!this.state.isOntozryFlag ? <React.Fragment >
                                             <Form.Group className="col-6 mb-3" >
-                                                <Form.Label className="text-">Dosagio</Form.Label>
+                                                <Form.Label className="text-">Dosaggio</Form.Label>
                                                 <Form.Control id="quantitaPrescrizione" onChange={this.handleChangeDosagio} alt="medicationDTO" name="quantitaPrescrizione" placeholder="Inserisci farmaco" />
                                             </Form.Group>
                                             <Form.Group className="col-6 mb-3" >
@@ -576,8 +576,8 @@ export class NewTherapy extends Component {
                                     </Row>
                                     <Row>
                                         <Form.Group className="col-6 mb-3" >
-                                            <Form.Label className="text-">Doagio</Form.Label>
-                                            <Form.Control name="dosagio" placeholder="Inserisci Dosagio" onChange={this.handleChangeTherapy} />
+                                            <Form.Label className="text-">Dosaggio</Form.Label>
+                                            <Form.Control name="dosagio" placeholder="Inserisci Dosaggio" onChange={this.handleChangeTherapy} />
                                         </Form.Group>
                                         <Form.Group className="col-6 mb-3" >
                                             <Form.Label className="text-">Quantita</Form.Label>
@@ -626,7 +626,7 @@ export class NewTherapy extends Component {
                                 <thead>
                                     <tr>
                                         <th>Farmaco</th>
-                                        <th>Dosagio</th>
+                                        <th>Dosaggio</th>
                                         <th>Quantita</th>
                                         <th>Data Inizio</th>
                                         <th>Data Fine</th>
