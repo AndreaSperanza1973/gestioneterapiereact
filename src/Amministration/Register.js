@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Form, Button, } from 'react-bootstrap';
 import { api, medico, user } from '../helpers/api/api';
-import '../css/style.css';
 import { Link } from "react-router-dom";
 import SimpleReactValidator from 'simple-react-validator';
 import { entitiesLabels, message } from '../helpers/Constants';

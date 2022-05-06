@@ -32,7 +32,8 @@ function PatientProfile() {
         fetchPatient();
     }, []);
 
-    function editPatient() {
+    function editPatient(evt) {
+        evt.preventDefault();
         patient.post("UpdateProfile/", patientProfile)
             .then((response) => {
                 if (response.status === 200) {
@@ -90,7 +91,7 @@ function PatientProfile() {
                 <h1 className="h1">Profilo assistito</h1>
                 <div className="row h-100 justify-content-center align-items-center">
                     <div className="col-12">
-                        <form action>
+                        <form onSubmit={editPatient}>
                             <div className="form-grop mb-5">
                                 <div className="form-check form-check-inline">
                                     <input className="form-check-input dark" type="checkbox" id="inlineCheckbox1" name="canTravel" checked={patientProfile.canTravel} onChange={() => updateStatesCanTravel()} />
@@ -119,11 +120,11 @@ function PatientProfile() {
                                         <button className="btn btn-secondary me-3" id>Indietro</button><button className="btn btn-secondary me-3" id>Annulla</button>
                                     </div>
                                     <div className="col-auto ms-md-auto mb-3">
-                                        <button className="btn btn-primary me-3" id onClick={() => editPatient()}>Salva modifiche</button><button className="btn btn-primary" id>Avanti</button>
+                                        <button className="btn btn-primary me-3" id type="submit" >Salva modifiche</button><button className="btn btn-primary" id>Avanti</button>
                                     </div>
                                 </div>
                             </div>
-                        </form>                      
+                        </form>
                     </div>
                 </div>
             </div>
@@ -181,7 +182,7 @@ function PatientProfile() {
                     <Button onClick={() => editPatient()} >Salva le modifiche</Button>
                 </div>
             </Form> */}
-            
+
         </>
 
     )

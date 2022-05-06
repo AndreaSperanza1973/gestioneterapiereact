@@ -3,7 +3,6 @@ import { Container, Row, Col, Form, Button, Modal, Spinner, Tabs, Tab, Table } f
 import { RowCustom } from "../Doctor/PatientComponent";
 import { Eye } from 'react-bootstrap-icons';
 import { user, medico, patient, patientcode } from '../helpers/api/api';
-import '../css/style.css';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import { NotificationContainer as ContainerModal, NotificationManager as ManagerModal } from 'react-notifications';
 import { entitiesLabels, message , role } from '../helpers/Constants';

@@ -1,5 +1,4 @@
 import React, { Component, useState, useEffect } from 'react';
-import '../css/style.css';
 import { Row, Col, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { PatientInfo } from "./PatientComponent"

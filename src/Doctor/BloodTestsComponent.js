@@ -1,6 +1,5 @@
 import { Col, Table, Form, Button, Container, Row, Carousel } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../helpers/api/api';
 import { useParams } from 'react-router-dom';

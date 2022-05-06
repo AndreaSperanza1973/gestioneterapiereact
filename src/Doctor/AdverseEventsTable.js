@@ -61,7 +61,7 @@ function AdverseEventsInfo() {
             <div className='mb-3'>
                 <Button variant="primary" id="btnAdd" onClick={handleShow}>Aggiungi eventi avversi <i class="fas fa-plus"></i></Button>
             </div>
-            <AdverseEventsModal show={show} handleClose={handleClose} />
+            <AdverseEventsModal show={show} handleClose={handleClose} setAdverseEvents={setAdverseEvents}/>
         </>
     );
 }
@@ -186,11 +186,11 @@ function AdverseEventsModal(props) {
         newAdverseEvent.idPatientProfile = parseInt(newAdverseEvent.idPatientProfile);
         newAdverseEvent.idIntensity = parseInt(newAdverseEvent.idIntensity);
         moment(newAdverseEvent.dateEvent).format("DD/MM/YYYY")
-        // newAdverseEvent.dateEvent = moment(newAdverseEvent.dateEvent).format("DD/MM/YYYY")
         patient.post("Events/", newAdverseEvent)
             .then((response) => {
                 if (response.status === 200) {
                     NotificationManager.success(message.PATIENT + message.SuccessUpdate, entitiesLabels.SUCCESS, 3000);
+                    props.setAdverseEvents(response.data.dati);
                 }
             }).catch((error) => {
                 NotificationManager.error(message.ErrorServer, entitiesLabels.ERROR, 3000);

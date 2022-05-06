@@ -31,6 +31,7 @@ export const entitiesLabels = {
 export const message = {
   //ERROR
   ErrorLogin: 'Username o password errati ',
+  ErrorUnauthorized: 'Utente non autorizzato',
   ErrorServer: 'Errore interno al programma ',
   ErrorRequire: 'Inserire tutti i campi richiesti ',
   ///SUCCESS
@@ -57,5 +58,6 @@ export const notificationType = {
 
 export const role = {
   CAREMANAGER: 3,
+  PATIENT: 2,
   DOCTOR:1
 }

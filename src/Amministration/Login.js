@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { api, user } from '../helpers/api/api';
-import '../css/style.css';
 import { Link } from "react-router-dom";
 import SimpleReactValidator from 'simple-react-validator';
-import { entitiesLabels, message } from '../helpers/Constants';
+import { entitiesLabels, message, role } from '../helpers/Constants';
 import 'react-notifications/lib/notifications.css';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import moment from 'moment';
@@ -43,15 +42,18 @@ export class Login extends Component {
             user.post("Login", this.state)
                 .then(async (response) => {
                     if (response.status == 200) {
-                        localStorage.setItem('accessToken', response.data.dati.accessToken);
-                        localStorage.setItem('refreshToken', response.data.dati.refreshToken);
-                        localStorage.setItem('role', JSON.stringify(response.data.dati.userDTO));
-                        window.location.href = "/Dashboard";
+                        if(response.data.dati.userDTO.idRole === role.DOCTOR || response.data.dati.userDTO.idRole === role.CAREMANAGER){
+                            localStorage.setItem('accessToken', response.data.dati.accessToken);
+                            localStorage.setItem('refreshToken', response.data.dati.refreshToken);
+                            localStorage.setItem('role', JSON.stringify(response.data.dati.userDTO));
+                            window.location.href = "/Dashboard";
+                        } else {
+                            NotificationManager.error(message.ErrorUnauthorized, entitiesLabels.ERROR, 3000);
+                        }
                     }
                 }).catch((error) => {
                     NotificationManager.error(message.ErrorLogin, entitiesLabels.ERROR, 3000);
                 });
-
         } else {
             this.validator.showMessages();
             NotificationManager.warning(message.ErrorRequire, entitiesLabels.WARNING, 3000);
@@ -162,7 +164,7 @@ export class Login extends Component {
                     <script src="./script/jquery.slim.min.js"></script>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
                     <script src="./script/swiper.bundle.min.js"></script>
-
+                    < NotificationContainer />
 
                 </body>
             </html>

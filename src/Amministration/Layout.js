@@ -1,5 +1,3 @@
-import '../css/style.css';
-
 import React, { Component } from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,13 +6,10 @@ import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react
 import Login from './Login';
 import Splash from './Splash';
 import Register from './Register';
-
-
 import MedicalCenter from '../CarManager/MedicalCenter';
 import ListDoctor from '../CarManager/ListDoctor';
 import ContactInfo from '../CarManager/ContactInfo';
 import ContactInfoPatient from '../CarManager/ContactInfoPatient';
-
 import DashboardDoctors from '../Doctor/DashboardDoctors';
 import NewPatient from '../Doctor/NewPatient';
 import NewTherapy from '../Doctor/NewTherapy';

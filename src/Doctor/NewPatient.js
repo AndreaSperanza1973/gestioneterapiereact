@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../css/style.css';
 import { Row, Container, Form, Button } from 'react-bootstrap';
 import { patientcode, patient, user } from '../helpers/api/api';
 import { Link } from "react-router-dom";

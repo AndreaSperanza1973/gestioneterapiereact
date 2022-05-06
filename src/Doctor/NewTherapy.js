@@ -1,5 +1,4 @@
 import React, { Component, useState, useEffect } from 'react';
-import '../css/style.css';
 import { Tabs, Tab, Container, Form, Row, InputGroup, Button, FormControl, Table, Modal } from 'react-bootstrap';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import { RowCustom } from "./PatientComponent"
